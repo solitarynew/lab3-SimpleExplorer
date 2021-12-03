@@ -147,7 +147,7 @@ public final class FilePropertiesDialog extends DialogFragment {
 
     private static final class FilePropertiesPagerItem implements PagerItem {
         private final File mFile;
-        private TextView mPathLabel, mTimeLabel, mSizeLabel, mMD5Label, mSHA1Label;
+        private TextView mPathLabel, mTimeLabel, mSizeLabel, mMD5Label, mSHA1Label, mReadLabel, mWriteLabel;
         private View mView;
         private LoadFsTask mTask;
 
@@ -185,6 +185,8 @@ public final class FilePropertiesDialog extends DialogFragment {
             this.mSizeLabel = (TextView) table.findViewById(R.id.total_size);
             this.mMD5Label = (TextView) table.findViewById(R.id.md5_summary);
             this.mSHA1Label = (TextView) table.findViewById(R.id.sha1_summary);
+            this.mReadLabel = (TextView) table.findViewById(R.id.can_read);
+            this.mWriteLabel = (TextView) table.findViewById(R.id.can_write);
         }
 
         private final class LoadFsTask extends AsyncTask<File, Void, String[]> {
@@ -196,6 +198,8 @@ public final class FilePropertiesDialog extends DialogFragment {
                 mSizeLabel.setText("...");
                 mMD5Label.setText("...");
                 mSHA1Label.setText("...");
+                mReadLabel.setText(mFile.canRead() ? "yes" : "no");
+                mWriteLabel.setText(mFile.canWrite() ? "yes" : "no");
             }
 
             @Override

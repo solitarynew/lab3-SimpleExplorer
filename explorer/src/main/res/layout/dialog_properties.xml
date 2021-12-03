@@ -25,9 +25,9 @@
                 android:ellipsize="end"
                 android:singleLine="true"
                 android:text="@string/location"
+                android:textColor="?android:textColorPrimary"
                 android:textIsSelectable="false"
-                android:textStyle="bold"
-                android:textColor="?android:textColorPrimary" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/path_label"
@@ -151,6 +151,65 @@
                 android:text="@string/minus"
                 android:textSize="13sp"
                 android:textIsSelectable="false" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="7dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@string/readable"
+                android:textColor="?android:textColorPrimary"
+                android:textIsSelectable="false"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/can_read"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:paddingTop="5dp"
+                android:singleLine="true"
+                android:text="@string/minus"
+                android:textIsSelectable="false"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="7dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@string/writeable"
+                android:textColor="?android:textColorPrimary"
+                android:textIsSelectable="false"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/can_write"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:paddingTop="5dp"
+                android:singleLine="true"
+                android:text="@string/minus"
+                android:textIsSelectable="false"
+                android:textSize="13sp" />
+
         </LinearLayout>
 
     </LinearLayout>

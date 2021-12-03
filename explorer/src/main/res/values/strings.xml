@@ -127,4 +127,6 @@
 
     <!-- permissions -->
     <string name="message_denied">Permission \"%1$s\" has been denied</string>
+    <string name="readable">Readable</string>
+    <string name="writeable">Writeable</string>
 </resources>
