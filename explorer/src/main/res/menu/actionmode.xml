@@ -30,8 +30,8 @@
     <item
         android:id="@+id/actionzip"
         android:icon="?attr/action_zip"
-        app:showAsAction="ifRoom"
-        android:title="@string/multizip" />
+        android:title="Compressed file"
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/actiongroupowner"
         app:showAsAction="never"
