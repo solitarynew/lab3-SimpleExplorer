@@ -1,6 +1,7 @@
 package com.dnielfe.manager.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.dnielfe.manager.EditActivity;
 import com.dnielfe.manager.R;
 import com.dnielfe.manager.preview.IconPreview;
 import com.dnielfe.manager.settings.Settings;
@@ -62,6 +64,16 @@ public class BrowserListAdapter extends BaseAdapter {
 
         if (file.isFile()) {
             // Shows the size of File
+            if (file.getName().endsWith(".txt")) {
+                convertView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(mContext, EditActivity.class);
+                        intent.putExtra("file", getItem(position));
+                        mContext.startActivity(intent);
+                    }
+                });
+            }
             mViewHolder.bottomView.setText(SimpleUtils.formatCalculatedSize(file.length()));
         } else {
             String[] list = file.list();
